@@ -1,0 +1,9 @@
+# LLVM intermediate representation
+*.ll
+*.bc
+
+# Clang/LLVM build artifacts and caches
+.cache/
+build/
+*.out
+*.o
