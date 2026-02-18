@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMaui.MainPage"
+             xmlns:local="clr-namespace:InventoryMaui.Models">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CollectionView x:Name="ClientView"
+            Grid.Column="0"
+            Grid.Row="0"
+            ItemsSource="{Binding ClientsList}"
+            IsVisible="True"
+            Margin="0, 0, 10, 0"
+            SelectionMode="Single" 
+            SelectionChanged="OnClientsSelected">
+
+            <CollectionView.ItemTemplate >
+                <DataTemplate x:DataType="local:ClientResponseDto" >
+                    <StackLayout Padding="10" BackgroundColor="#1E1E1E" Margin="15" 
+                         BindingContextChanged="StackLayout_BindingContextChanged_1">
+                        <Label Text="👩🏿‍💼" FontSize="30"/>
+                        <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontAttributes="Bold"/>
+                        <Label Text="{Binding FullName, StringFormat='📝 ФИО: {0}'}" FontAttributes="Bold"/>
+                        <Label Text="{Binding Birth, StringFormat='📅 Дата рождения: {0}'}" FontAttributes="Bold"/>
+                        <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ScrollView Grid.Column="1" Grid.Row="0">
+            <VerticalStackLayout>
+
+                <CollectionView
+                    x:Name="ClientCollectionView">
+                   
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate x:DataType="local:ClientResponseDto">
+                            <StackLayout Padding="10"  BackgroundColor="#1E1E1E">
+                                <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontAttributes="Bold"/>
+                                <Label Text="{Binding FullName, StringFormat='📝 ФИО: {0}'}" FontAttributes="Bold"/>
+                                <Label Text="🧾 Транзакции" FontSize="Small" Margin="0, 5, 0, 2"/>
+                                <VerticalStackLayout BindableLayout.ItemsSource="{Binding transactions}" Padding="20" Spacing="1">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate x:DataType="local:TransactionResponseDto">
+                                            <Label Text="{Binding Sum, StringFormat='💵 сумма {0}р'}"/>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </VerticalStackLayout>
+                                <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!--<VerticalStackLayout Spacing="10" Padding="10" Grid.Column="2" Grid.Row="0" BackgroundColor="#1E1E1E" Margin="10,0,10,0" >
+            <Label Text="Статистика" HorizontalOptions="Center" FontSize="30"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <BoxView HeightRequest="100" Grid.Column="0" Color="#233554" x:Name="BoxMoney"/>
+            </Grid>
+            
+        </VerticalStackLayout>-->
+
+        <VerticalStackLayout Spacing="10" Padding="10" Grid.Column="3" Grid.Row="0" BackgroundColor="#1E1E1E">
+            <Label Text="Управление" HorizontalOptions="Center" FontSize="30"/>
+                <Button Text="Добавить запись" Clicked="AddClient" BackgroundColor="#BB86FC"/>
+                <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+
+                <Entry Placeholder="Введите id" x:Name="IdDelete" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+                <Button Text="Удалить" Clicked="DeleteClient_btn" BackgroundColor="#BB86FC"/>
+                <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+
+                <Entry Placeholder="Введите id" x:Name="IdUpdate" />
+                <Entry Placeholder="Имя" x:Name="fullname" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+                <Entry Placeholder="Паспорт" x:Name="passport" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+                <Label Text="Дата рождения"/>
+                <DatePicker x:Name="birthUp"/>
+                <Button Text="Изменить" Clicked="Button_Clicked" BackgroundColor="#BB86FC"/>
+                <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+
+                <Label Text="Транзакции" HorizontalOptions="Center" FontSize="24"/>
+            <Picker Title="Выбор клиента" x:Name="GetClients" BackgroundColor="#CFC9C9" TextColor="#000000">
+                    <Picker.Items >
+                        <x:String></x:String>
+                    </Picker.Items>
+                </Picker>
+            <Button Text="Загрузить транзакции" Clicked="BtnGetTransactions" BackgroundColor="#BB86FC"/>
+        </VerticalStackLayout>
+
+        
+        
+    </Grid>
+</ContentPage>

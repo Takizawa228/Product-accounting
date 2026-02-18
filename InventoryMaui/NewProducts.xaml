@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMaui.NewProducts"
+             Title="NewProducts"
+             xmlns:local="clr-namespace:InventoryMaui.Models">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CollectionView x:Name="workersCollectionView"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    ItemsSource="{Binding WorkerList}"
+                    IsVisible="True"
+                    Margin="0, 00, 10, 0"
+                    SelectionMode="Single" 
+                    SelectionChanged="OnClientsSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="local:WorkersResponseDto">
+                    <StackLayout Padding="10" BackgroundColor="#1E1E1E" Margin="15">
+                        <Label Text="👩🏿‍💼" FontSize="30"/>
+                        <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontAttributes="Bold"/>
+                        <Label Text="{Binding FullName, StringFormat='📝 ФИО: {0}'}" FontAttributes="Bold"/>
+                        <Label Text="{Binding Post, StringFormat='⚡ Должность: {0}'}" />
+                        <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <ScrollView Grid.Column="1" Grid.Row="0" Margin="0,0,10,0">
+            <CollectionView x:Name="workersWithView">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="local:WorkersResponseDto">
+                        <StackLayout Padding="5"  BackgroundColor="#1E1E1E">
+                            <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding FullName, StringFormat='📝 ФИО: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Post, StringFormat='⚡ Должность: {0}'}" />
+                            <Label Text="🧾 Транзакции" FontSize="Small" Margin="0, 5, 0, 2"/>
+                            <VerticalStackLayout Padding="20" Spacing="1" BindableLayout.ItemsSource="{Binding transactions}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate x:DataType="local:TransactionResponseDto">
+                                        <Label Text="{Binding Quantity, StringFormat='📰 Количество {0}'}"/>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </VerticalStackLayout>
+                            <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+       
+        <VerticalStackLayout Grid.Column="2" Grid.Row="0" Spacing="10" Padding="10" BackgroundColor="#1E1E1E">
+
+            <Label Text="Управление" HorizontalTextAlignment="Center" FontSize="30"/>
+
+            <Label Text="Добавить сотрудника" />
+            <Entry Placeholder="Введите ФИО" x:Name="nameWorker" MaxLength="100" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Picker Title="Выбор должности" x:Name="PickerItem">
+                <Picker.Items>
+                    <x:String>Продавец</x:String>
+                    <x:String>Администратор</x:String>
+                    <x:String>Директор</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Добавить" Clicked="AddWorker" BackgroundColor="#BB86FC"/>
+
+            <Label Text="Изменить запись"/>
+            <Entry Placeholder="Введите id" x:Name="id" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите ФИО" x:Name="idd" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Picker Title="Выбор должности" x:Name="PickerItemUp">
+                <Picker.Items>
+                    <x:String>Продавец</x:String>
+                    <x:String>Администратор</x:String>
+                    <x:String>Директор</x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Изменить" Clicked="UptadeWorker" BackgroundColor="#BB86FC"/>
+
+            <Label Text="Удалить запись" HorizontalOptions="Center" FontSize="24"/>
+            <Entry Placeholder="Введите id" x:Name="id_delete" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Button Text="Удалить" Clicked="DeleteWorker" BackgroundColor="#BB86FC"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

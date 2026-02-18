@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="InventoryApi/InventoryApi.csproj" />
+  <Project Path="InventoryMaui/InventoryMaui.csproj" Id="d343fb86-456d-40aa-9475-67370cb6828b">
+    <Deploy />
+  </Project>
+</Solution>

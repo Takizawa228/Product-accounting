@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA3CF81-82B7-7EA6-DB26-EC631E2CAE39}|InventoryApi\\InventoryApi.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\inventoryapi\\inventoryapi\\repository\\productsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA3CF81-82B7-7EA6-DB26-EC631E2CAE39}|InventoryApi\\InventoryApi.csproj|solutionrelative:inventoryapi\\repository\\productsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA3CF81-82B7-7EA6-DB26-EC631E2CAE39}|InventoryApi\\InventoryApi.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\inventoryapi\\inventoryapi\\services\\productsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA3CF81-82B7-7EA6-DB26-EC631E2CAE39}|InventoryApi\\InventoryApi.csproj|solutionrelative:inventoryapi\\services\\productsservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDA3CF81-82B7-7EA6-DB26-EC631E2CAE39}|InventoryApi\\InventoryApi.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\inventoryapi\\inventoryapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDA3CF81-82B7-7EA6-DB26-EC631E2CAE39}|InventoryApi\\InventoryApi.csproj|solutionrelative:inventoryapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{9f7fc93e-1f96-4f4b-a43f-e921e7b8ff32}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientsController.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\InventoryApi\\Controllers\\ClientsController.cs",
+              "RelativeDocumentMoniker": "InventoryApi\\Controllers\\ClientsController.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\InventoryApi\\Controllers\\ClientsController.cs",
+              "RelativeToolTip": "InventoryApi\\Controllers\\ClientsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T11:01:26.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsServices.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\InventoryApi\\Services\\ProductsServices.cs",
+              "RelativeDocumentMoniker": "InventoryApi\\Services\\ProductsServices.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\InventoryApi\\Services\\ProductsServices.cs",
+              "RelativeToolTip": "InventoryApi\\Services\\ProductsServices.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAADwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-18T04:27:28.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\InventoryApi\\Repository\\ProductsRepository.cs",
+              "RelativeDocumentMoniker": "InventoryApi\\Repository\\ProductsRepository.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\u043B\\source\\repos\\InventoryApi\\InventoryApi\\Repository\\ProductsRepository.cs",
+              "RelativeToolTip": "InventoryApi\\Repository\\ProductsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-22T06:05:09.184Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMaui.tra"
+             Title="tra"
+              xmlns:local="clr-namespace:InventoryMaui.Models">
+
+    <CollectionView x:Name="TransactionView" ItemsSource="{Binding TransactionList}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="local:TransactionResponseDto">
+                <VerticalStackLayout Spacing="10" Padding="5" Margin="10, 5" BackgroundColor="#1E1E1E">
+                    <Label Text="{Binding Id, StringFormat='ID: {0}'}" FontAttributes="Bold"/>
+                    <Label Text="{Binding Quantity, StringFormat='📰 Количество: {0}'}" FontAttributes="Bold"/>
+                    <Label Text="{Binding Sum, StringFormat='💵 Сумма: {0}р'}" FontAttributes="Bold"/>
+                    <Label Text="{Binding Date, StringFormat='📅 Дата сделки: {0}'}" FontAttributes="Bold"/>
+                    <Label Text="{Binding ClientName, StringFormat='👩🏿‍💼 Покупатель: {0}'}" FontAttributes="Bold"/>
+                    <Label Text="{Binding WorkerName, StringFormat='👩🏿‍💼 Работник: {0}'}" FontAttributes="Bold"/>
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding Products}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="local:ProductResponseDto">
+                                <Grid ColumnDefinitions="*, Auto" Margin="0,2">
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding Name, StringFormat='🥔 Продукция: {0}'}" FontAttributes="Bold" TextColor="White"/>
+                                        <Label Text="{Binding Price, StringFormat=' ({0:N2} руб.)'}" TextColor="LightGreen"/>
+                                        <Label Text="{Binding Category, StringFormat='📋 Категория: {0}'}" TextColor="Gray" FontSize="Micro"/>
+                                        <Label Text="{Binding Supplier, StringFormat='👨🏿‍🌾 Поставщик: {0}'}" TextColor="Gray" FontSize="Micro"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                    <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+                </VerticalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

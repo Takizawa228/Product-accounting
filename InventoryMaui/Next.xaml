@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InventoryMaui.Next"
+             xmlns:local="clr-namespace:InventoryMaui.Models"
+             Title="Продукция">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <CollectionView x:Name="productsCollectionView"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    ItemsSource="{Binding WorkerList}"
+                    IsVisible="True"
+                    Margin="0, 0, 10, 0"
+                    SelectionMode="Single" 
+                    SelectionChanged="OnWorkerSelected">
+ 
+            <CollectionView.ItemTemplate >   
+                <DataTemplate x:DataType="local:Products" >
+                    <StackLayout Padding="10" BackgroundColor="#1E1E1E" Margin="15" 
+                                 BindingContextChanged="StackLayout_BindingContextChanged">
+                            <Label Text="{Binding Id, StringFormat='Id: {0}'} " FontAttributes="Bold"/>
+                            <Label Text="{Binding Name, StringFormat='🥡 Название: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Category,StringFormat='📋 Категория: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Supplier,StringFormat='👨🏿‍🌾 Поставщик: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Quantity,StringFormat='📰 Количество: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Price,StringFormat='💵 Цена: {0}р'}" FontAttributes="Bold"/>
+                        <BoxView HeightRequest="3" Color="#233554" Margin="0, 5"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label x:Name="noDataLabel"
+           Text="Данные не найдены."
+           IsVisible="False"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Grid.Column="0"
+           Grid.Row="0" />
+
+        <VerticalStackLayout Grid.Column="1"
+                         Grid.Row="0"
+                         Spacing="10"
+                         Padding="10" BackgroundColor="#1E1E1E">
+            <Label Text="Управление" HorizontalTextAlignment="Center" FontSize="30"/>
+            <Label Text="Добавить продукт" />
+            <Entry Placeholder="Введите название" x:Name="nameProduct" MaxLength="100" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Picker Title="Выбор категории" x:Name="PickerItem">
+                <Picker.Items>
+                    <x:String>Молочка</x:String>
+                    <x:String>Сосиски</x:String>
+                    <x:String>Чипсы</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry Placeholder="Введите поставщика" x:Name="nameSupp" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите количество" x:Name="quantity" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите цену" x:Name="price" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            
+            <Button Text="Добавить" Clicked="Btn_AddProduct"/>
+            
+            <Label Text="Удалить запись"/>
+            <Entry Placeholder="Введите id" x:Name="id_delete" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Button Text="Удалить" Clicked="Btn_DeleteProduct"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Column="2"
+                         Grid.Row="0"
+                         Spacing="10"
+                         Padding="10" BackgroundColor="#1E1E1E" Margin="10,0,0,0">
+
+            <Label Text="Изменить запись"/>
+            <Entry Placeholder="Введите id" x:Name="idUp" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите новое имя" x:Name="nameUp" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Picker Title="Выбор категории" x:Name="PickerItemUp">
+                <Picker.Items>
+                    <x:String>Молочка</x:String>
+                    <x:String>Сосиски</x:String>
+                    <x:String>Чипсы</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry Placeholder="Введите поставщика" x:Name="nameSuppUp" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите количество" x:Name="quantityUp" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите цену" x:Name="priceUp" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Button Text="Изменить" Clicked="Btn_UpdateProduct"/>
+            <Label Text="Провести транзакцию"/>
+            <Entry Placeholder="Введите id товара" x:Name="GetIdTran" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <Entry Placeholder="Введите количество" x:Name="GetQuantityTran" BackgroundColor="#CFC9C9" TextColor="#000000"/>
+            <!--<Label Text="Сумма" x:Name="GetSumTran" />-->
+            <Label Text="Дата операции"/>
+            <DatePicker x:Name="GetDataTran"/>
+            <Picker Title="Выбор клиента" x:Name="GetClients">
+                <Picker.Items>
+                    <x:String></x:String>
+                </Picker.Items>
+            </Picker>
+            <Picker Title="Выбор сотрудника" x:Name="GetWorkers">
+                <Picker.Items>
+                    <x:String></x:String>
+                </Picker.Items>
+            </Picker>
+            <Button Text="Провести" Clicked="Btn_AddTran"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

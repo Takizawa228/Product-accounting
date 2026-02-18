@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="InventoryMaui" mvid="337500e527944abd8ff5a6048f4a3b0c">
+  <java-to-managed>
+    <entry java-name="crc64b1df7d54f915f72c/MainActivity" managed-name="InventoryMaui.MainActivity, InventoryMaui" managed-type-token-id="33554444" />
+    <entry java-name="crc64b1df7d54f915f72c/MainApplication" managed-name="InventoryMaui.MainApplication, InventoryMaui" managed-type-token-id="33554445" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64b1df7d54f915f72c/MainActivity" managed-name="InventoryMaui.MainActivity, InventoryMaui" managed-type-token-id="33554444" />
+    <entry java-name="crc64b1df7d54f915f72c/MainApplication" managed-name="InventoryMaui.MainApplication, InventoryMaui" managed-type-token-id="33554445" />
+  </managed-to-java>
+</api>

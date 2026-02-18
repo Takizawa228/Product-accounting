@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "LO6e85bS2AU=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Кирилл\\source\\repos\\InventoryApi\\InventoryMaui\\InventoryMaui.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Кирилл\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1012",
+      "level": "Error",
+      "message": "Для некоторых целевых платформ отсутствует требуемая версия, несмотря на то, что указана платформа: net10.0-android, net10.0-ios, net10.0-maccatalyst.",
+      "projectPath": "C:\\Users\\Кирилл\\source\\repos\\InventoryApi\\InventoryMaui\\InventoryMaui.csproj",
+      "filePath": "C:\\Users\\Кирилл\\source\\repos\\InventoryApi\\InventoryMaui\\InventoryMaui.csproj",
+      "targetGraphs": []
+    }
+  ]
+}
