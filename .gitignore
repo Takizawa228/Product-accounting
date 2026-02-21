@@ -1,6 +1,7 @@
 # LLVM intermediate representation
 *.ll
 *.bc
+.vs
 
 # Clang/LLVM build artifacts and caches
 .cache/
